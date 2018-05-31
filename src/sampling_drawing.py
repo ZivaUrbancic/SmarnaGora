@@ -12,7 +12,7 @@ fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 
 file_lines = open("smarna.txt","r").readlines()
-file_line_subsample = sample(file_lines, 1000)
+file_line_subsample = sample(file_lines, 5000)
 
 x =[float(i[0]) for i in file_line_subsample]
 y =[float(i[1]) for i in file_line_subsample]
