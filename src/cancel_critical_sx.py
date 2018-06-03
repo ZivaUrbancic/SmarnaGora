@@ -1,5 +1,8 @@
 from readwrite import read_dgvf_from_file
 from random import choice
+from itertools import chain, combinations
+from collections import defaultdict
+from expand_function import extract_raw
 
 
 def boundary(a):
@@ -51,7 +54,7 @@ def cancel_along_path(V, C, start, path):
     C.remove(path[-1])
 
 
-def cancel_all(V, C, p=1):
+def cancel_all(V, C):
     """Cancel all possible critical pairs."""
     while True:
         paths = find_paths_between_critical_simplices(V, C)
@@ -64,9 +67,7 @@ def cancel_all(V, C, p=1):
 
 
 def max_f(sx, fun):
-    print(list(sx)[0], type(list(sx)[0]))
-    print(list(sx)[0] in fun)
-    return 0  # max([fun[s] for s in list(sx)])
+    return max([fun[s] for s in list(sx)])
 
 
 def extract_cancel(K, fun, p, j, V, C):
