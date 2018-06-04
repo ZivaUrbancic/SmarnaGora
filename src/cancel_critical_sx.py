@@ -76,8 +76,9 @@ def extract_cancel(K, fun, p, j, V, C):
         candidates = {}
         for pair in paths:
             starting, ending = pair
-            if starting == sigma and len(paths[pair]) == 1 and max_f(ending, fun) > max_f(starting, fun) - p:
-                candidates[pair] = paths[pair][0]
+            if ending in fun.keys() and ending in fun.keys():
+                if starting == sigma and len(paths[pair]) == 1 and max_f(ending, fun) > max_f(starting, fun) - p:
+                    candidates[pair] = paths[pair][0]
         ms = {}
         for pair1 in candidates:
             _, y = pair1
@@ -93,7 +94,7 @@ def extract_cancel(K, fun, p, j, V, C):
             cancel_along_path(V, C, new_sigma, reverse_path(paths[(sigma, new_sigma)][0]))
 
 
-def extract(K, fun, p, read_from_file=True):
+def extract(K, fun, p, read_from_file=False):
     if read_from_file:
         V, C = read_dgvf_from_file("discrete_vector_field.txt")
     else:
