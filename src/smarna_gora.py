@@ -11,14 +11,17 @@ from itertools import combinations, chain
 from cancel_critical_sx import extract
 # from expand_function import extract_raw
 # from readwrite import read_dgvf_from_file, write_dgvf_into_file
+import utils
 
 ## Constants
-SAMPLE_NUMBER = 17
+SAMPLE_NUMBER = 100
 FILE_NAME = "smarna.txt"
+rnd.seed(45)
 
 #SAMPLE_NUMBER = 5
 #FILE_NAME = "test1.txt"
 ###
+
 
 
 def sample(list_input, subsample_size):
@@ -73,22 +76,11 @@ fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 ax.plot_trisurf(triang, Z=h, cmap=plt.cm.Spectral)
 
-# iz tock v koordiante in visino
-points = {}
-for i in f_points.items():
-    points[i[0]] = (i[1][0], i[1][1], f_h[i[0]])
+# # iz tock v koordiante in visino
+# points = {}
+# for i in f_points.items():
+#     points[i[0]] = (i[1][0], i[1][1], f_h[i[0]])
 
-for i in critical_cells[1]:
-    c_x = []
-    c_y = []
-    c_h = []
-    for j in list(i):
-        c_x.append(float(points[j][0]))
-        c_y.append(float(points[j][1]))
-        c_h.append(float(points[j][2]))
-    ax.scatter(c_x, c_y, c_h)
-
-plt.show()
 
 # RAZŠIRITEV FUNKCIJE VIŠINE NA SIMPLICIALNI KOMPLEKS
 
@@ -101,6 +93,24 @@ reshaped_points_x_y = np.asarray(reshaped_points_x_y, dtype=tuple)
 T = np.ndarray.tolist(reshaped_points_x_y[tri.simplices])
 
 #  Klic funkcije extract, ki vrne par V, C po opravljenih krajšanjih kritičnih simpleksih.
-V1, C1 = extract(generate_all_sxs(T), f, 8000)
-#print('C', len(C), 'C1', len(C1))
+V1, C1 = extract(generate_all_sxs(T), f, 50)
+# print(C1)
 
+for i in C1:
+    c_x = []
+    c_y = []
+    c_h = []
+    for j in i:
+        if (float(f[j]) > 350):
+            c_x.append(float(j[0]))
+            c_y.append(float(j[1]))
+            c_h.append(float(f[j]))
+    if(len(c_x) == 3):
+        c_x.append(c_x[0])
+        c_y.append(c_y[0])
+        c_h.append(c_h[0])
+    print(c_x, c_y, c_h)
+    if(len(i) == 2):
+        ax.plot(c_x, c_y, c_h, "r")
+
+plt.show()
