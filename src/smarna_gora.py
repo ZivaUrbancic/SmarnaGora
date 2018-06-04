@@ -53,10 +53,40 @@ tri = Delaunay(np.asarray(points_x_y, dtype='float64'))
 triangles = tri.simplices
 triang = Triangulation([i[0] for i in points_x_y_h], [i[1] for i in points_x_y_h], triangles=triangles)
 
+f_points = {}
+for i,point in enumerate(tri.points):
+    f_points[i] = (point[0], point[1])
+
+f_h = {}
+for i in f_points.items():
+    f_h[i[0]] = f[i[1]]
+
+# Iskanje kriticnih celice
+cx_points = []
+for i in triangles:
+    cx_points.append((i[0], i[1], i[2]))
+complex_K = utils.closure(cx_points)
+critical_cells = utils.extend(complex_K, f_h)
+
 # IZRIS GRAFA
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 ax.plot_trisurf(triang, Z=h, cmap=plt.cm.Spectral)
+
+# iz tock v koordiante in visino
+points = {}
+for i in f_points.items():
+    points[i[0]] = (i[1][0], i[1][1], f_h[i[0]])
+
+for i in critical_cells[1]:
+    c_x = []
+    c_y = []
+    c_h = []
+    for j in list(i):
+        c_x.append(float(points[j][0]))
+        c_y.append(float(points[j][1]))
+        c_h.append(float(points[j][2]))
+    ax.scatter(c_x, c_y, c_h)
 
 plt.show()
 
