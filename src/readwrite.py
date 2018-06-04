@@ -17,7 +17,6 @@ def str_to_dict(text):
     dict_pairs = text.split(')), ((')
     for pair in dict_pairs:
         pair = pair.replace('),): ((', ')): ((')
-        # print(pair)
         k, password = tuple(pair.split(')): (('))
         k = str_to_sx(k)
         password = str_to_sx(password)
@@ -31,8 +30,6 @@ def str_to_point(text):
 
 def str_to_sx(text):
     text = text.split('), (')
-    #if len(text) == 1:
-    #    text = [text[0].remove(',')]
     text = [str_to_point(t) for t in text]
     return tuple(text)
 

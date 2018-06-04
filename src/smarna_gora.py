@@ -13,13 +13,29 @@ from cancel_critical_sx import extract
 # from readwrite import read_dgvf_from_file, write_dgvf_into_file
 
 ## Constants
-SAMPLE_NUMBER = 2000
+SAMPLE_NUMBER = 17
 FILE_NAME = "smarna.txt"
+
+#SAMPLE_NUMBER = 5
+#FILE_NAME = "test1.txt"
 ###
+
 
 def sample(list_input, subsample_size):
     subsample = rnd.choices(list_input, k=subsample_size)
     return [i.split(" ") for i in subsample]
+
+
+def generate_all_sxs(K):
+    """Returns a set of all simplices in simplicial complex K."""
+    sxi = set()
+    for sx in K:
+        if type(sx[0]) != tuple:
+            sx = [tuple(i) for i in sx]
+        n = len(sx)
+        for i in range(n):
+            sxi = sxi.union(combinations(sx, i + 1))
+    return sxi
 
 
 f = {}
@@ -46,19 +62,15 @@ plt.show()
 
 # RAZŠIRITEV FUNKCIJE VIŠINE NA SIMPLICIALNI KOMPLEKS
 
+#  V funkcijah, ki jih bomo uporabljali, bodo morale biti točke podane kot numpy array
+#  parov (tj. tuple-ov).
+reshaped_points_x_y = np.asarray(reshaped_points_x_y, dtype=tuple)
 
-def generate_all_sxs(K):
-    sxi = set()
-    for sx in K:
-        if type(sx[0]) != tuple:
-            sx = [tuple(i) for i in sx]
-        n = len(sx)
-        for i in range(n):
-            sxi = sxi.union(combinations(sx, i + 1))
-    return sxi
-
-
-reshaped_points_x_y = np. asarray(reshaped_points_x_y, dtype=tuple)
+#  V spremenljivko T shranimo triangulacijo, ki je enaka kot tri, le da so točke pari in
+#  ne seznami dolžine 2.
 T = np.ndarray.tolist(reshaped_points_x_y[tri.simplices])
 
-print(extract(generate_all_sxs(T), f, 4))
+#  Klic funkcije extract, ki vrne par V, C po opravljenih krajšanjih kritičnih simpleksih.
+V1, C1 = extract(generate_all_sxs(T), f, 8000)
+#print('C', len(C), 'C1', len(C1))
+
