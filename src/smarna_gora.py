@@ -8,7 +8,7 @@ from itertools import combinations, chain
 # from collections import defaultdict
 # from random import choice
 # from math import sqrt
-from cancel_critical_sx import extract
+from cancel_critical_sx import extract, morse_complex
 # from expand_function import extract_raw
 # from readwrite import read_dgvf_from_file, write_dgvf_into_file
 import utils
@@ -94,6 +94,7 @@ T = np.ndarray.tolist(reshaped_points_x_y[tri.simplices])
 
 #  Klic funkcije extract, ki vrne par V, C po opravljenih krajšanjih kritičnih simpleksih.
 V1, C1 = extract(generate_all_sxs(T), f, 50)
+print(morse_complex(V1, C1))
 # print(C1)
 
 for i in C1:
@@ -109,7 +110,7 @@ for i in C1:
         c_x.append(c_x[0])
         c_y.append(c_y[0])
         c_h.append(c_h[0])
-    print(c_x, c_y, c_h)
+    #print(c_x, c_y, c_h)
     if(len(i) == 2):
         ax.plot(c_x, c_y, c_h, "r")
 

@@ -103,10 +103,6 @@ def boundary(a):
     return combinations(a, len(a)-1)
 
 
-def reverse_path(path):
-    return [path[i] for i in range(len(path)-1, -1, -1)]
-
-
 def expand_path(V, ends, path):
     """Expands a path with the given prefix which is stored in the
     list path. The last simplex in the list path in the end of the
@@ -139,24 +135,17 @@ def find_paths_between_critical_simplices(V, C):
 
 def cancel_along_path(V, C, start, path):
     """Cancel two critical cells connected with the given path."""
-    # if len(path) < 2:
-    #     print("Houston, we have a problem!")
     reversed_path = list(reversed(path)) + [start]
     for i in range(0, len(reversed_path), 2):
         V[reversed_path[i]] = reversed_path[i + 1]
     C.remove(start)
-    # print(C, start)
-    # print(path[-1])
     C.remove(path[-1])
-    # print(C)
-    # print("-------------------------------------------------")
 
 
 def cancel_all(V, C):
     """Cancel all possible critical pairs."""
     while True:
         paths = find_paths_between_critical_simplices(V, C)
-        # print(len(paths))
         candidates = [(pair, path[0]) for pair, path in paths.items() if len(path) == 1]
         if len(candidates) == 0:
             break
@@ -165,6 +154,7 @@ def cancel_all(V, C):
 
 
 def max_f(sx, fun):
+    """Returns the highest value of fun in 0-dimensional subsimplices of sx."""
     return max([fun[s] for s in list(sx)])
 
 
@@ -178,35 +168,53 @@ def extract_cancel(K, fun, p, j, V, C):
             if starting == sigma and len(paths[pair]) == 1 and max_f(ending, fun) > max_f(starting, fun) - p:
                 candidates[pair] = paths[pair][0]
                 ms[pair] = max_f(ending, fun)
-        #
-        #ms = {}
-        #for pair1 in candidates:
-        #    _, y = pair1
-        #    special = True
-        #    for pair2 in candidates:
-        #        _, z = pair2
-        #        if y == z and paths[pair1] != paths[pair2]:
-        #            special = False
-        #    if special:
-        #        ms[y] = max_f(y, fun)
         if len(ms) > 0:
             new_pair, _ = min(ms.items())
-            # _, new_sigma = new_pair
-            # print(C)
-            # print(candidates[new_pair])
             cancel_along_path(V, C, sigma, candidates[new_pair])  # paths[(sigma, new_sigma)][0]))
 
 
-def extract(K, fun, p):  # , read_from_file=True):
-    # if read_from_file:
-    #     V, C = read_dgvf_from_file("discrete_vector_field.txt")
-    # else:
+def extract(K, fun, p):
     V, C = extract_raw(K, fun, infty)
-    # print('C', len(C))
     for j in range(2, 4):
         extract_cancel(K, fun, p, j, V, C)
-    # print('C1', len(C))
     return V, C
+
+
+def scalar_product(sx1, sx2):
+    """Returns the coefficient of sx2 in the image of sx1 withe the usual boundary
+    operator."""
+    d = set(sx1).difference(set(sx2)).pop()
+    if list(sx1).index(d) % 2 == 0:
+        return 1
+    else:
+        return -1
+
+
+def same_orientation(path):
+    """If sx1 and sx2 are simplices and 'path' a path between them, this function
+    returns weather the orientation preserves while moving along 'path'"""
+    o = 1
+    for i in range(0, len(path)-1, 2):
+        o = o * scalar_product(path[i+1], path[i]) * scalar_product(path[i+1], path[i+2])
+    return o
+
+
+def morse_complex(V, C):
+    """Given a pair (V, C), which defines a gradient vector field, the function
+    returns a dictionary 'boundary' with critical simplexes as keys.
+    boundary[c] = a list of pairs (critical simplex, coefficient) that describes
+    the image of morse boundary operator on c."""
+    boundary = defaultdict(list)
+    paths = find_paths_between_critical_simplices(V, C)
+    for pair in paths:
+        coeff = 0
+        for path in paths[pair]:
+            coeff += same_orientation(path)
+        if pair[0] in boundary and coeff != 0:
+            boundary[pair[0]].append((pair[1], coeff))
+        elif coeff != 0:
+            boundary[pair[0]] = [(pair[1], coeff)]
+    return boundary
 
 
 torus = [((0, 0), (1, 0), (1, 1)), ((0, 0), (1, 1), (0, 1)), ((1, 0), (2, 0), (2, 1)),
@@ -222,6 +230,6 @@ f = {(0, 0): 0, (1, 0): 80, (2, 0): 50, (0, 1): 10, (1, 1): 60, (2, 1): 30, (0, 
 
 # T = generate_all_sxs([((1, 1), (2, 2), (3, 0)), ((2, 2), (3, 0), (7, 0.5))])
 # f = {(1, 1): 4, (2, 2): 5, (3, 0): 10, (7, 0.5): 3}
-print(extract(T, f, infty))
+# print(extract(T, f, infty))
 # extract_cancel(T, f, infty, 3, V, C)
 #print()
