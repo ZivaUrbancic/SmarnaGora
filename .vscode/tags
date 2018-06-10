@@ -1,0 +1,210 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Axes3D	../src/sampling_drawing.py	/^from mpl_toolkits.mplot3d import Axes3D$/;"	kind:namespace	line:4
+Axes3D	../src/smarna_gora.py	/^from mpl_toolkits.mplot3d import Axes3D$/;"	kind:namespace	line:2
+Check	../src/discrete_gradient_vector_field.py	/^class Check:$/;"	kind:class	line:269
+Delaunay	../src/smarna_gora.py	/^from scipy.spatial import Delaunay$/;"	kind:namespace	line:6
+FILE_NAME	../src/smarna_gora.py	/^FILE_NAME = "smarna.txt"$/;"	kind:variable	line:19
+GeneratorType	../src/discrete_gradient_vector_field.py	/^        from types import GeneratorType$/;"	kind:namespace	line:442
+K	../src/utils.py	/^    K = closure([(1, 2, 3), (2, 3, 4)])$/;"	kind:variable	line:113
+Polygon	../src/delauney.py	/^from shapely.geometry.polygon import Polygon$/;"	kind:namespace	line:6
+PolygonPatch	../src/delauney.py	/^from descartes import PolygonPatch$/;"	kind:namespace	line:7
+SAMPLE_NUMBER	../src/smarna_gora.py	/^SAMPLE_NUMBER = 10$/;"	kind:variable	line:18
+T	../src/cancel_critical_sx.py	/^T = generate_all_sxs(torus)$/;"	kind:variable	line:239
+T	../src/smarna_gora.py	/^T = np.ndarray.tolist(reshaped_points_x_y[tri.simplices])$/;"	kind:variable	line:95
+TriAnalyzer	../src/smarna_gora.py	/^from matplotlib.tri import Triangulation, TriAnalyzer, UniformTriRefiner$/;"	kind:namespace	line:7
+Triangulation	../src/smarna_gora.py	/^from matplotlib.tri import Triangulation, TriAnalyzer, UniformTriRefiner$/;"	kind:namespace	line:7
+Trikotnik	../src/delauney.py	/^class Trikotnik:$/;"	kind:class	line:10
+UniformTriRefiner	../src/smarna_gora.py	/^from matplotlib.tri import Triangulation, TriAnalyzer, UniformTriRefiner$/;"	kind:namespace	line:7
+__init__	../src/delauney.py	/^    def __init__(self, triterka):$/;"	kind:member	line:12
+_validate_current_file	../src/discrete_gradient_vector_field.py	/^def _validate_current_file():$/;"	kind:function	line:485
+ax	../src/sampling_drawing.py	/^ax = fig.add_subplot(111, projection='3d')$/;"	kind:variable	line:12
+ax	../src/smarna_gora.py	/^ax = fig.add_subplot(111, projection='3d')$/;"	kind:variable	line:77
+backup	../src/discrete_gradient_vector_field.py	/^    def backup(filename):$/;"	kind:function	line:506
+bias_sample	../src/smarna_gora.py	/^def bias_sample(list_input, subsample_size, height):$/;"	kind:function	line:30
+boundary	../src/cancel_critical_sx.py	/^def boundary(a):$/;"	kind:function	line:101
+boundary	../src/utils.py	/^def boundary(a):$/;"	kind:function	line:79
+c_h	../src/smarna_gora.py	/^    c_h = []$/;"	kind:variable	line:105
+c_x	../src/smarna_gora.py	/^    c_x = []$/;"	kind:variable	line:103
+c_x	../src/smarna_gora.py	/^    c_x = []$/;"	kind:variable	line:133
+c_y	../src/smarna_gora.py	/^    c_y = []$/;"	kind:variable	line:104
+c_y	../src/smarna_gora.py	/^    c_y = []$/;"	kind:variable	line:134
+cancel_all	../src/cancel_critical_sx.py	/^def cancel_all(V, C):$/;"	kind:function	line:146
+cancel_along_path	../src/cancel_critical_sx.py	/^def cancel_along_path(V, C, start, path):$/;"	kind:function	line:137
+cancel_critical_sx.py	../src/cancel_critical_sx.py	1;"	kind:file	line:1
+chain	../src/cancel_critical_sx.py	/^from itertools import combinations, chain$/;"	kind:namespace	line:4
+chain	../src/expand_function.py	/^from itertools import combinations, chain$/;"	kind:namespace	line:1
+chain	../src/smarna_gora.py	/^from itertools import combinations, chain$/;"	kind:namespace	line:8
+chain	../src/utils.py	/^from itertools import combinations, chain$/;"	kind:namespace	line:3
+choice	../src/cancel_critical_sx.py	/^from random import choice$/;"	kind:namespace	line:1
+choice	../src/utils.py	/^from random import choice$/;"	kind:namespace	line:5
+clean	../src/discrete_gradient_vector_field.py	/^    def clean(x, digits=6, typed=False):$/;"	kind:member	line:303
+closure	../src/cancel_critical_sx.py	/^def closure(K):$/;"	kind:function	line:15
+closure	../src/expand_function.py	/^def closure(K):$/;"	kind:function	line:11
+closure	../src/utils.py	/^def closure(K):$/;"	kind:function	line:14
+combinations	../src/cancel_critical_sx.py	/^from itertools import combinations, chain$/;"	kind:namespace	line:4
+combinations	../src/expand_function.py	/^from itertools import combinations, chain$/;"	kind:namespace	line:1
+combinations	../src/smarna_gora.py	/^from itertools import combinations, chain$/;"	kind:namespace	line:8
+combinations	../src/utils.py	/^from itertools import combinations, chain$/;"	kind:namespace	line:3
+complex_K	../src/smarna_gora.py	/^complex_K = utils.closure(cx_points)$/;"	kind:variable	line:72
+contained	../src/cancel_critical_sx.py	/^def contained(a, b):$/;"	kind:function	line:20
+contained	../src/expand_function.py	/^def contained(a, b):$/;"	kind:function	line:16
+contained	../src/utils.py	/^def contained(a, b):$/;"	kind:function	line:18
+contextmanager	../src/discrete_gradient_vector_field.py	/^from contextlib import contextmanager$/;"	kind:namespace	line:267
+critical_cell_smarna	../src/smarna_gora.py	/^    critical_cell_smarna = []$/;"	kind:variable	line:106
+critical_cell_smarna	../src/smarna_gora.py	/^    critical_cell_smarna = []$/;"	kind:variable	line:135
+critical_cells	../src/smarna_gora.py	/^critical_cells = utils.extend(complex_K, f_h)$/;"	kind:variable	line:73
+critical_cells_smarna	../src/smarna_gora.py	/^critical_cells_smarna = []$/;"	kind:variable	line:100
+critical_cells_smarna	../src/smarna_gora.py	/^critical_cells_smarna = []$/;"	kind:variable	line:130
+cx_points	../src/smarna_gora.py	/^cx_points = []$/;"	kind:variable	line:69
+data	../src/smarna_gora.py	/^data = open(FILE_NAME, "r").readlines()$/;"	kind:variable	line:47
+defaultdict	../src/cancel_critical_sx.py	/^from collections import defaultdict$/;"	kind:namespace	line:2
+defaultdict	../src/utils.py	/^from collections import defaultdict$/;"	kind:namespace	line:4
+delauney.py	../src/delauney.py	1;"	kind:file	line:1
+difflines	../src/discrete_gradient_vector_field.py	/^    def difflines(actual_lines, expected_lines):$/;"	kind:member	line:424
+discrete_gradient_vector_field.py	../src/discrete_gradient_vector_field.py	1;"	kind:file	line:1
+division	../src/delauney.py	/^from __future__ import division$/;"	kind:namespace	line:1
+doloci_sosede	../src/delauney.py	/^    def doloci_sosede(self, T):$/;"	kind:member	line:18
+dopolni_simpleks	../src/smarna_gora.py	/^def dopolni_simpleks(simpleks):$/;"	kind:function	line:146
+equal	../src/discrete_gradient_vector_field.py	/^    def equal(expression, expected_result, clean=None, env={}):$/;"	kind:member	line:330
+error	../src/discrete_gradient_vector_field.py	/^    def error(message, *args, **kwargs):$/;"	kind:member	line:298
+error	../src/discrete_gradient_vector_field.py	/^import io, json, os, re, sys, shutil, traceback, urllib.error, urllib.request$/;"	kind:namespace	line:264
+expand_function.py	../src/expand_function.py	1;"	kind:file	line:1
+expand_path	../src/cancel_critical_sx.py	/^def expand_path(V, ends, path):$/;"	kind:function	line:107
+expand_path	../src/utils.py	/^def expand_path(V, ends, path):$/;"	kind:function	line:84
+extend	../src/utils.py	/^def extend(K, f):$/;"	kind:function	line:57
+extract	../src/cancel_critical_sx.py	/^def extract(K, fun, p):$/;"	kind:function	line:189
+extract	../src/smarna_gora.py	/^from cancel_critical_sx import extract, morse_complex$/;"	kind:namespace	line:12
+extract	../src/utils.py	/^from cancel_critical_sx import extract, morse_complex$/;"	kind:namespace	line:6
+extract_cancel	../src/cancel_critical_sx.py	/^def extract_cancel(K, fun, p, j, V, C):$/;"	kind:function	line:163
+extract_parts	../src/discrete_gradient_vector_field.py	/^    def extract_parts(filename):$/;"	kind:function	line:486
+extract_raw	../src/cancel_critical_sx.py	/^def extract_raw(K, fun, p):$/;"	kind:function	line:66
+extract_raw	../src/expand_function.py	/^def extract_raw(K, f):$/;"	kind:function	line:62
+f	../src/cancel_critical_sx.py	/^f = {(0, 0): 0, (1, 0): 80, (2, 0): 50, (0, 1): 10, (1, 1): 60, (2, 1): 30, (0, 2): 70,$/;"	kind:variable	line:240
+f	../src/smarna_gora.py	/^f = {}$/;"	kind:variable	line:45
+f	../src/utils.py	/^    f = {1: 0, 2: 2, 3: 4, 4: 0}$/;"	kind:variable	line:114
+f_h	../src/smarna_gora.py	/^f_h = {}$/;"	kind:variable	line:64
+f_points	../src/smarna_gora.py	/^f_points = {}$/;"	kind:variable	line:60
+feedback	../src/discrete_gradient_vector_field.py	/^    def feedback(message, *args, **kwargs):$/;"	kind:member	line:294
+fig	../src/sampling_drawing.py	/^fig = plt.figure()$/;"	kind:variable	line:11
+fig	../src/smarna_gora.py	/^fig = plt.figure()$/;"	kind:variable	line:76
+file_line_subsample	../src/sampling_drawing.py	/^file_line_subsample = sample(file_lines, 5000)$/;"	kind:variable	line:15
+file_lines	../src/sampling_drawing.py	/^file_lines = open("smarna.txt","r").readlines()$/;"	kind:variable	line:14
+find_paths_between_critical_simplices	../src/cancel_critical_sx.py	/^def find_paths_between_critical_simplices(V, C):$/;"	kind:function	line:123
+find_paths_between_critical_simplices	../src/utils.py	/^def find_paths_between_critical_simplices(V, C):$/;"	kind:function	line:99
+free_face	../src/discrete_gradient_vector_field.py	/^def free_face(all_sx_K):$/;"	kind:function	line:45
+generate_all_sxs	../src/cancel_critical_sx.py	/^def generate_all_sxs(K):$/;"	kind:function	line:89
+generate_all_sxs	../src/discrete_gradient_vector_field.py	/^def generate_all_sxs(K):$/;"	kind:function	line:24
+generate_all_sxs	../src/smarna_gora.py	/^def generate_all_sxs(K):$/;"	kind:function	line:34
+generate_vector_field	../src/discrete_gradient_vector_field.py	/^def generate_vector_field(K):$/;"	kind:function	line:58
+generator	../src/discrete_gradient_vector_field.py	/^    def generator(expression, expected_values, should_stop=False, further_iter=0, env={}, clean=None):$/;"	kind:member	line:441
+generify	../src/delauney.py	/^def generify(S):$/;"	kind:function	line:54
+h	../src/smarna_gora.py	/^h = np.asarray([i[2] for i in points_x_y_h], dtype='float64')$/;"	kind:variable	line:53
+has_solution	../src/discrete_gradient_vector_field.py	/^    def has_solution(part):$/;"	kind:member	line:271
+imata_skupni_rob	../src/delauney.py	/^def imata_skupni_rob(jaz, trikotnik):$/;"	kind:function	line:26
+in_file	../src/discrete_gradient_vector_field.py	/^    def in_file(filename, content, encoding=None):$/;"	kind:member	line:364
+incircle	../src/delauney.py	/^def incircle(triangle, tocka):$/;"	kind:function	line:110
+informacija_za_menjavo	../src/delauney.py	/^def informacija_za_menjavo(jaz, trikotnik):$/;"	kind:function	line:33
+infty	../src/cancel_critical_sx.py	/^from numpy import infty$/;"	kind:namespace	line:3
+infty	../src/smarna_gora.py	/^from numpy import infty$/;"	kind:namespace	line:5
+initialize	../src/discrete_gradient_vector_field.py	/^    def initialize(parts):$/;"	kind:member	line:275
+input	../src/discrete_gradient_vector_field.py	/^    def input(content, encoding=None):$/;"	kind:member	line:378
+intersection	../src/cancel_critical_sx.py	/^def intersection(s1, s2):$/;"	kind:function	line:31
+intersection	../src/expand_function.py	/^def intersection(s1, s2):$/;"	kind:function	line:27
+intersection	../src/utils.py	/^def intersection(s1, s2):$/;"	kind:function	line:27
+io	../src/discrete_gradient_vector_field.py	/^import io, json, os, re, sys, shutil, traceback, urllib.error, urllib.request$/;"	kind:namespace	line:264
+is_contained	../src/discrete_gradient_vector_field.py	/^def is_contained(sx1, sx2):$/;"	kind:function	line:33
+is_highest_dim	../src/discrete_gradient_vector_field.py	/^def is_highest_dim(all_sx_K):$/;"	kind:function	line:37
+is_optimal	../src/delauney.py	/^def is_optimal(neko_ime):$/;"	kind:function	line:124
+its	../src/discrete_gradient_vector_field.py	/^import itertools as its$/;"	kind:namespace	line:21
+join	../src/cancel_critical_sx.py	/^def join(a, b):$/;"	kind:function	line:61
+join	../src/expand_function.py	/^def join(a, b):$/;"	kind:function	line:57
+join	../src/utils.py	/^def join(a, b):$/;"	kind:function	line:53
+json	../src/discrete_gradient_vector_field.py	/^import io, json, os, re, sys, shutil, traceback, urllib.error, urllib.request$/;"	kind:namespace	line:264
+link	../src/cancel_critical_sx.py	/^def link(s, cx):$/;"	kind:function	line:36
+link	../src/expand_function.py	/^def link(s, cx):$/;"	kind:function	line:32
+link	../src/utils.py	/^def link(s, cx):$/;"	kind:function	line:31
+lower_link	../src/cancel_critical_sx.py	/^def lower_link(s, cx, f):$/;"	kind:function	line:51
+lower_link	../src/expand_function.py	/^def lower_link(s, cx, f):$/;"	kind:function	line:47
+lower_link	../src/utils.py	/^def lower_link(s, cx, f):$/;"	kind:function	line:44
+math	../src/delauney.py	/^import math$/;"	kind:namespace	line:2
+matplotlib	../src/delauney.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:5
+matplotlib	../src/sampling_drawing.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:5
+matplotlib	../src/smarna_gora.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:3
+max_f	../src/cancel_critical_sx.py	/^def max_f(sx, fun):$/;"	kind:function	line:157
+morse_complex	../src/cancel_critical_sx.py	/^def morse_complex(V, C):$/;"	kind:function	line:215
+morse_complex	../src/smarna_gora.py	/^from cancel_critical_sx import extract, morse_complex$/;"	kind:namespace	line:12
+morse_complex	../src/utils.py	/^from cancel_critical_sx import extract, morse_complex$/;"	kind:namespace	line:6
+narisi	../src/delauney.py	/^def narisi(T_, T):$/;"	kind:function	line:150
+np	../src/delauney.py	/^import numpy as np$/;"	kind:namespace	line:4
+np	../src/smarna_gora.py	/^import numpy as np$/;"	kind:namespace	line:4
+optimize	../src/delauney.py	/^def optimize(T_):$/;"	kind:function	line:133
+oriented_counterclockwise	../src/delauney.py	/^def oriented_counterclockwise(trikotnik):$/;"	kind:function	line:92
+os	../src/discrete_gradient_vector_field.py	/^import io, json, os, re, sys, shutil, traceback, urllib.error, urllib.request$/;"	kind:namespace	line:264
+out_file	../src/discrete_gradient_vector_field.py	/^    def out_file(filename, content, encoding=None):$/;"	kind:member	line:393
+output	../src/discrete_gradient_vector_field.py	/^    def output(expression, content, use_globals=False):$/;"	kind:member	line:404
+p	../src/smarna_gora.py	/^p = ax.plot_trisurf(triang, Z=h, cmap=plt.cm.Spectral)$/;"	kind:variable	line:78
+part	../src/discrete_gradient_vector_field.py	/^    def part():$/;"	kind:member	line:285
+paths	../src/utils.py	/^    paths = find_paths_between_critical_simplices(V, C)$/;"	kind:variable	line:116
+plt	../src/delauney.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:5
+plt	../src/sampling_drawing.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:5
+plt	../src/smarna_gora.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:3
+pogoj_za_menjavo	../src/delauney.py	/^def pogoj_za_menjavo(trikotnik, sosed):$/;"	kind:function	line:98
+points	../src/delauney.py	/^def points(triangulacija):$/;"	kind:function	line:47
+points_x_y	../src/smarna_gora.py	/^points_x_y = [i[:2] for i in points_x_y_h]$/;"	kind:variable	line:52
+points_x_y_h	../src/smarna_gora.py	/^points_x_y_h = sample(data, SAMPLE_NUMBER)$/;"	kind:variable	line:48
+re	../src/discrete_gradient_vector_field.py	/^import io, json, os, re, sys, shutil, traceback, urllib.error, urllib.request$/;"	kind:namespace	line:264
+read_dgvf_from_file	../src/readwrite.py	/^def read_dgvf_from_file(ime_datoteke):$/;"	kind:function	line:37
+readwrite.py	../src/readwrite.py	1;"	kind:file	line:1
+request	../src/discrete_gradient_vector_field.py	/^import io, json, os, re, sys, shutil, traceback, urllib.error, urllib.request$/;"	kind:namespace	line:264
+reshaped_points_x_y	../src/smarna_gora.py	/^reshaped_points_x_y = []$/;"	kind:variable	line:46
+reshaped_points_x_y	../src/smarna_gora.py	/^reshaped_points_x_y = np.asarray(reshaped_points_x_y, dtype=tuple)$/;"	kind:variable	line:91
+rnd	../src/sampling_drawing.py	/^import random as rnd$/;"	kind:namespace	line:3
+rnd	../src/smarna_gora.py	/^import random as rnd$/;"	kind:namespace	line:1
+run	../src/discrete_gradient_vector_field.py	/^    def run(statements, expected_state, clean=None, env={}):$/;"	kind:member	line:343
+same_orientation	../src/cancel_critical_sx.py	/^def same_orientation(path):$/;"	kind:function	line:206
+sample	../src/sampling_drawing.py	/^def sample(list_input, subsample_size):$/;"	kind:function	line:7
+sample	../src/smarna_gora.py	/^def sample(list_input, subsample_size):$/;"	kind:function	line:26
+sampling_drawing.py	../src/sampling_drawing.py	1;"	kind:file	line:1
+scalar_product	../src/cancel_critical_sx.py	/^def scalar_product(sx1, sx2):$/;"	kind:function	line:196
+secret	../src/discrete_gradient_vector_field.py	/^    def secret(x, hint=None, clean=None):$/;"	kind:member	line:325
+shutil	../src/discrete_gradient_vector_field.py	/^import io, json, os, re, sys, shutil, traceback, urllib.error, urllib.request$/;"	kind:namespace	line:264
+simplex_closure	../src/cancel_critical_sx.py	/^def simplex_closure(a):$/;"	kind:function	line:8
+simplex_closure	../src/expand_function.py	/^def simplex_closure(a):$/;"	kind:function	line:4
+simplex_closure	../src/utils.py	/^def simplex_closure(a):    $/;"	kind:function	line:8
+simplex_value	../src/cancel_critical_sx.py	/^def simplex_value(s, f, aggregate):$/;"	kind:function	line:44
+simplex_value	../src/expand_function.py	/^def simplex_value(s, f, aggregate):$/;"	kind:function	line:40
+simplex_value	../src/utils.py	/^def simplex_value(s, f, aggregate):$/;"	kind:function	line:38
+smarna_gora.py	../src/smarna_gora.py	1;"	kind:file	line:1
+star	../src/cancel_critical_sx.py	/^def star(s, cx):$/;"	kind:function	line:25
+star	../src/expand_function.py	/^def star(s, cx):$/;"	kind:function	line:21
+star	../src/utils.py	/^def star(s, cx):$/;"	kind:function	line:22
+str_to_dict	../src/readwrite.py	/^def str_to_dict(text):$/;"	kind:function	line:14
+str_to_list	../src/readwrite.py	/^def str_to_list(text):$/;"	kind:function	line:8
+str_to_point	../src/readwrite.py	/^def str_to_point(text):$/;"	kind:function	line:27
+str_to_sx	../src/readwrite.py	/^def str_to_sx(text):$/;"	kind:function	line:31
+submit_parts	../src/discrete_gradient_vector_field.py	/^    def submit_parts(parts, url, token):$/;"	kind:function	line:515
+summarize	../src/discrete_gradient_vector_field.py	/^    def summarize():$/;"	kind:member	line:473
+switch	../src/delauney.py	/^def switch(trikotnik, sosed, T):$/;"	kind:function	line:68
+sys	../src/discrete_gradient_vector_field.py	/^import io, json, os, re, sys, shutil, traceback, urllib.error, urllib.request$/;"	kind:namespace	line:264
+time	../src/cancel_critical_sx.py	/^import time$/;"	kind:namespace	line:5
+timing	../src/cancel_critical_sx.py	/^def timing(f):$/;"	kind:function	line:179
+torus	../src/cancel_critical_sx.py	/^torus = [((0, 0), (1, 0), (1, 1)), ((0, 0), (1, 1), (0, 1)), ((1, 0), (2, 0), (2, 1)),$/;"	kind:variable	line:233
+traceback	../src/discrete_gradient_vector_field.py	/^import io, json, os, re, sys, shutil, traceback, urllib.error, urllib.request$/;"	kind:namespace	line:264
+tri	../src/smarna_gora.py	/^tri = Delaunay(np.asarray(points_x_y, dtype='float64'))$/;"	kind:variable	line:56
+triang	../src/smarna_gora.py	/^triang = Triangulation([i[0] for i in points_x_y_h], [i[1] for i in points_x_y_h], triangles=triangles)$/;"	kind:variable	line:58
+triangles	../src/smarna_gora.py	/^triangles = tri.simplices$/;"	kind:variable	line:57
+update_attempts	../src/discrete_gradient_vector_field.py	/^    def update_attempts(old_parts, response):$/;"	kind:function	line:538
+urllib	../src/discrete_gradient_vector_field.py	/^import io, json, os, re, sys, shutil, traceback, urllib.error, urllib.request$/;"	kind:namespace	line:264
+utils	../src/smarna_gora.py	/^import utils$/;"	kind:namespace	line:15
+utils.py	../src/utils.py	1;"	kind:file	line:1
+visible_input	../src/discrete_gradient_vector_field.py	/^            def visible_input(prompt):$/;"	kind:function	line:408
+wrap	../src/cancel_critical_sx.py	/^    def wrap(*args):$/;"	kind:function	line:180
+write_dgvf_into_file	../src/readwrite.py	/^def write_dgvf_into_file(ime_datoteke, V, C):$/;"	kind:function	line:1
+x	../src/sampling_drawing.py	/^x =[float(i[0]) for i in file_line_subsample]$/;"	kind:variable	line:17
+y	../src/sampling_drawing.py	/^y =[float(i[1]) for i in file_line_subsample]$/;"	kind:variable	line:18
+z	../src/sampling_drawing.py	/^z =[float(i[2]) for i in file_line_subsample]$/;"	kind:variable	line:19

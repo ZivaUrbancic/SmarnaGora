@@ -2,6 +2,7 @@ from random import choice
 from collections import defaultdict
 from numpy import infty
 from itertools import combinations, chain
+import time
 
 
 def simplex_closure(a):
@@ -155,6 +156,7 @@ def cancel_all(V, C):
 
 def max_f(sx, fun):
     """Returns the highest value of fun in 0-dimensional subsimplices of sx."""
+    # Manhattan distance
     return max([fun[s] for s in list(sx)])
 
 
@@ -173,8 +175,19 @@ def extract_cancel(K, fun, p, j, V, C):
             cancel_along_path(V, C, sigma, candidates[new_pair])  # paths[(sigma, new_sigma)][0]))
 
 
+def timing(f):
+    def wrap(*args):
+        time1 = time.time()
+        ret = f(*args)
+        time2 = time.time()
+        print('%s function took %0.3f ms' % (f.__name__, (time2-time1)*1000.0))
+        return ret
+    return wrap
+
+# @timing
 def extract(K, fun, p):
     V, C = extract_raw(K, fun, infty)
+    # C = sorted(C, key = lambda x: fun[x[0]], reverse = False)
     for j in range(2, 4):
         extract_cancel(K, fun, p, j, V, C)
     return V, C

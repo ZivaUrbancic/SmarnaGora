@@ -1,6 +1,9 @@
 # gregorjerse/rt2. (2018). GitHub. Retrieved 1 June 2018, from https://github.com/gregorjerse/rt2/blob/master/2015_2016/lab13/Extending%20values%20on%20vertices.ipynb
 
 from itertools import combinations, chain
+from collections import defaultdict
+from random import choice
+from cancel_critical_sx import extract, morse_complex
 
 def simplex_closure(a):    
     """Returns the generator that iterating over all subsimplices (of all dimensions) in the closure
@@ -73,7 +76,43 @@ def extend(K, f):
                 V[join(a, v)] = join(b, v)
     return V, C
 
+def boundary(a):
+    """Return the boundary (codimension one faces) of the simplex a.
+    """
+    return combinations(a, len(a)-1)
+
+def expand_path(V, ends, path):
+    """Expands a path with the given prefix which is stored in the
+    list path. The last simplex in the list path in the end of the 
+    prefix. The path stops at the simplices in the set/list ends.
+    Returns the list of all paths with the given prefix which end in
+    critical cells.
+    """
+    if path[-1] in ends:      # path already ends at the critical simplex
+        yield path
+    elif path[-1] in V:       # can continue the path
+        children = (s for s in boundary(V[path[-1]]) if s != path[-1])
+        paths = (expand_path(V, ends, path + [V[path[-1]], c]) for c in children)
+        for p in chain.from_iterable(paths):
+            yield p
+
+def find_paths_between_critical_simplices(V, C):
+    """Find all paths connecting pairs of critical simplices a and b.
+    (starting in the boundary of a and ending in b).
+    Returns dictionary whose keys are pairs of connected critical simplices
+    and value for the given key is a list of paths connecting those simplices.
+    """
+    paths = defaultdict(list)    
+    for candidate in (s for s in C if len(s) > 1):
+        for start in boundary(candidate):
+            for path in expand_path(V, C, [start]):
+                paths[(candidate, path[-1])].append(path)
+    return paths
+
 if __name__ == "__main__":
     K = closure([(1, 2, 3), (2, 3, 4)])
-    f = {1: 0, 2: 2, 3: 2, 4: 0}
-    print(extend(K, f))
+    f = {1: 0, 2: 2, 3: 4, 4: 0}
+    V, C = extract(K, f, 1)
+    paths = find_paths_between_critical_simplices(V, C)
+    print(V,C)
+    print(paths)
